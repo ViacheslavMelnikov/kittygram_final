@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('STR_SECRET_KEY', ' ')
 
 # DEBUG = True
-if socket.gethostname() == os.getenv('SERVER_STR',' '):
+if socket.gethostname() == os.getenv('SERVER_STR', ' '):
     DEBUG = True
 else:
     DEBUG = False
