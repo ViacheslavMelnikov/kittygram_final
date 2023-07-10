@@ -63,7 +63,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'kittygram_backend.wsgi.application'
 
 
-DATABASES = {
+""" DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('POSTGRES_DB', 'kittygram'),
@@ -71,6 +71,17 @@ DATABASES = {
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'kittygram_password'),
         'HOST': os.getenv('DB_HOST', 'db'),
         'PORT': os.getenv('DB_PORT', 5432)
+    }
+} """
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'kittygram',
+        'USER': 'kittygram_user',
+        'PASSWORD': 'kittygram_password',
+        'HOST': 'db',
+        'PORT': 5432
     }
 }
 
