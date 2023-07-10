@@ -1,7 +1,6 @@
 import os
-# import socket
+import socket
 from pathlib import Path
-
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -11,11 +10,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('STR_SECRET_KEY', ' ')
 
 DEBUG = False
-# if socket.gethostname() == os.getenv('SERVER_STR', ' '):
-#    DEBUG = True
-# else:
-#    DEBUG = False
-
+if socket.gethostname() == os.getenv('SERVER_STR', ' '):
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0', 'melnikov-plusm.ru']
 
