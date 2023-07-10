@@ -10,11 +10,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('STR_SECRET_KEY', ' ')
 
-# DEBUG = True
-if socket.gethostname() == os.getenv('SERVER_STR', ' '):
-    DEBUG = True
-else:
-    DEBUG = False
+DEBUG = True
+#if socket.gethostname() == os.getenv('SERVER_STR', ' '):
+#    DEBUG = True
+#else:
+#    DEBUG = False
 
 
 ALLOWED_HOSTS = []
@@ -69,7 +69,7 @@ DATABASES = {
         'NAME': os.getenv('POSTGRES_DB', 'kittygram'),
         'USER': os.getenv('POSTGRES_USER', 'kittygram_user'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'kittygram_password'),
-        'HOST': os.getenv('DB_HOST', ''),
+        'HOST': os.getenv('DB_HOST', 'db'),
         'PORT': os.getenv('DB_PORT', 5432)
     }
 }
