@@ -49,3 +49,15 @@ python3 manage.py migrate
 ```
 python3 manage.py runserver
 ```
+
+Создать файл переменных окружения .env в корневой директории проекта. 
+Пример заполнения файла .env:
+```
+POSTGRES_DB=kitty
+POSTGRES_USER=user
+POSTGRES_PASSWORD=passw
+DB_NAME=dbsql
+DB_HOST=base
+DB_PORT=5432
+```
+Файл .env следует указать в .gitignore для исключения попадания в репозиторий!
