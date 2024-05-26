@@ -1,26 +1,25 @@
-#  Как работать с репозиторием финального задания
+#  Социальная сеть любителей котов Kittygram
 
-## Что нужно сделать
+##  URL
+https://melnikov-plusm.ru
 
-Настроить запуск проекта Kittygram в контейнерах и CI/CD с помощью GitHub Actions
+## Описание
 
-## Как проверить работу с помощью автотестов
+Интерактивный сайт с личным кабинетом с возможностями публикации фотографий котов, а также присваивания достижений.
 
-В корне репозитория создайте файл tests.yml со следующим содержимым:
-```yaml
-repo_owner: ваш_логин_на_гитхабе
-kittygram_domain: полная ссылка (https://доменное_имя) на ваш проект Kittygram
-taski_domain: полная ссылка (https://доменное_имя) на ваш проект Taski
-dockerhub_username: ваш_логин_на_докерхабе
-```
+## Технологии
+Python 3.11.1, Django 4.1, Django REST framework, React
 
-Скопируйте содержимое файла `.github/workflows/main.yml` в файл `kittygram_workflow.yml` в корневой директории проекта.
-
-Для локального запуска тестов создайте виртуальное окружение, установите в него зависимости из backend/requirements.txt и запустите в корневой директории проекта `pytest`.
-
-## Чек-лист для проверки перед отправкой задания
-
-- Проект Taski доступен по доменному имени, указанному в `tests.yml`.
-- Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
-- Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
-- В корне проекта есть файл `kittygram_workflow.yml`.
+## Запуск проекта в dev-режиме
+Клонируйте репозиторий и перейдите в него в командной строке:
+git clone git@github.com:ViacheslavMelnikov/kittygram_final.git
+cd kittygram_final
+Запустите проект с помощью команды:
+docker compose up
+Соберите статику Django с помощью команды:
+docker compose exec backend python manage.py collectstatic
+Скопируйте статику командой:
+docker compose exec backend cp -r /app/collected_static/. /static/static/
+По адресу http://127.0.0.1:9000/ сайт будет доступен.
+Автор
+Вячеслав Мельников (https://t.me/Rqprograz)
